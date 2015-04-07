@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SETUPTUTORIAL_EDITTEXT_TITLE"
+        android:hint="Title"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SETUPTUTORIAL_EDITTEXT_TITLE"
+        android:layout_alignParentRight="true"
+        android:id="@+id/SETUPTUTORIAL_IMAGEVIEW_ADDTAG"
+        android:src="@drawable/ic_action_add"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_alignTop="@id/SETUPTUTORIAL_IMAGEVIEW_ADDTAG"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/SETUPTUTORIAL_IMAGEVIEW_ADDTAG"
+        android:id="@+id/SETUPTUTORIAL_EDITTEXT_TAG"
+        android:hint="Tags describe your tutorial"/>
+
+    <TextView
+        android:layout_below="@id/SETUPTUTORIAL_EDITTEXT_TAG"
+        android:layout_alignLeft="@id/SETUPTUTORIAL_EDITTEXT_TITLE"
+        android:layout_width="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/SETUPTUTORIAL_TEXTVIEW_COMMONTAGS"
+        android:text="Popular Tags" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/SETUPTUTORIAL_GRIDVIEW_COMMONTAGS"
+        android:layout_below="@id/SETUPTUTORIAL_TEXTVIEW_COMMONTAGS"
+        android:layout_alignLeft="@id/SETUPTUTORIAL_TEXTVIEW_COMMONTAGS"
+        android:numColumns="2"
+        android:background="@drawable/border_ui"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+    </GridView>
+    <!-- android:background="@drawable/border_ui"
+            android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"-->
+
+</RelativeLayout>

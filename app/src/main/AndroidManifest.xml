@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ythogh.howdoyou" >
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_action_about"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name=".Dashboard"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Main" >
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login" >
+        </activity>
+        <activity
+            android:name=".BrowseTutorials"
+            android:label="@string/title_activity_browse_tutorials" >
+        </activity>
+        <activity
+            android:name=".CreateTutorial"
+            android:label="@string/title_activity_create_tutorial" >
+        </activity>
+        <activity
+            android:name=".ViewUsers"
+            android:label="@string/title_activity_view_users" >
+        </activity>
+    </application>
+
+</manifest>

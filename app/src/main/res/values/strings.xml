@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">How Do You...</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_activity_browse_tutorials">BrowseTutorials</string>
+    <string name="title_activity_create_tutorial">CreateTutorial</string>
+    <string name="title_activity_view_users">ViewUsers</string>
+
+</resources>

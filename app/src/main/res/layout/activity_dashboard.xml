@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:padding="15dp"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    tools:context="com.ythogh.howdoyou.Dashboard">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/DASHBOARD_BUTTON_BROWSE"
+        android:text="Browse Tutorials" />
+
+    <Button
+        android:layout_below="@id/DASHBOARD_BUTTON_BROWSE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/DASHBOARD_BUTTON_CREATE"
+        android:text="Create Tutorial" />
+
+    <Button
+        android:layout_below="@id/DASHBOARD_BUTTON_CREATE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/DASHBOARD_BUTTON_USERS"
+        android:text="View Users" />
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/White"
+    tools:context="com.ythogh.howdoyou.CreateTutorial">
+
+    <TextView
+        android:id="@+id/CREATETUTORIAL_TEXTVIEW_CREATETUTORIAL"
+        android:text="Setting up"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.view.ViewPager
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/CREATETUTORIAL_TEXTVIEW_CREATETUTORIAL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPagerCreateTutorial"/>
+
+</RelativeLayout>
