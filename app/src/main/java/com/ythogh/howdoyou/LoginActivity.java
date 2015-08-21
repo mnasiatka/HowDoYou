@@ -1,35 +1,64 @@
 package com.ythogh.howdoyou;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.EditText;
+import android.widget.ImageSwitcher;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
 
-public class LoginActivity extends ActionBarActivity implements ViewPager.OnPageChangeListener {
+public class LoginActivity extends ActionBarActivity {
 
-    public static int PAGE_NUMBER = 0;
-    private static final int NUM_PAGES = 7;
-    TextView tvPage, tvFragmentPage;
-    ViewPager vfPager;
-    PagePagerAdapter mPagerAdapter;
+    private ImageSwitcher imageSwitcher;
+    private EditText etUsername, etPassword;
+    private Context mContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        tvPage = (TextView) findViewById(R.id.LOGIN_TEXTVIEW_PAGE);
+        mContext = getApplicationContext();
 
-        vfPager = (ViewPager) findViewById(R.id.viewPager);
-        mPagerAdapter = new PagePagerAdapter(getSupportFragmentManager());
-        vfPager.setAdapter(mPagerAdapter);
-        vfPager.setOnPageChangeListener(this);
+        imageSwitcher = (ImageSwitcher)findViewById(R.id.imageswitcher);
+        etUsername = (EditText) findViewById(R.id.username);
+
+        etUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+                    public View makeView() {
+                        ImageView myView = new ImageView(getApplicationContext());
+                        return myView;
+                    }
+                });
+                imageSwitcher.setImageResource(R.drawable.ic_launcher);
+                Animation in = AnimationUtils.loadAnimation(mContext, android.R.anim.slide_in_left);
+                Animation out = AnimationUtils.loadAnimation(mContext, android.R.anim.slide_out_right);
+                imageSwitcher.setInAnimation(in);
+                imageSwitcher.setOutAnimation(out);
+                imageSwitcher.animate();
+            }
+        });
+
+
+
     }
 
     @Override
@@ -48,47 +77,4 @@ public class LoginActivity extends ActionBarActivity implements ViewPager.OnPage
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onPageScrolled(int position, float offset, int offsetPixels) {
-        PAGE_NUMBER = position + 1;
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-        PAGE_NUMBER = position + 1;
-        System.out.println("Page: " + (position + 1));
-        tvPage.setText("Page " + (position + 1));
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-
-    private class PagePagerAdapter extends FragmentStatePagerAdapter {
-
-        public PagePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int i) {
-            System.out.println("Item: " + i);
-            PagePagerFragment ppf = new PagePagerFragment();
-            Bundle extras = new Bundle();
-            extras.putInt("position", i);
-            ppf.setArguments(extras);
-            return ppf;
-        }
-
-        @Override
-        public int getItemPosition(Object object) {
-            return super.getItemPosition(object);
-        }
-
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
-    }
 }

@@ -316,10 +316,10 @@ public class SlidingProgression<T extends Number> extends ImageView {
 
     private boolean canMoveVerticallyUp(float x, float y) {
         System.out.println("up, normalized x: " + mThumbs.get(PRESSED_ID).normalizedValueX);
-        if (((PRESSED_ROW & 1) == 1) && mThumbs.get(PRESSED_ID).normalizedValueX >= .99) { // if it's an odd row, must be on right side to move up
+        if (((Math.round(PRESSED_ROW) & 1) == 1) && mThumbs.get(PRESSED_ID).normalizedValueX >= .99) { // if it's an odd row, must be on right side to move up
             return true;
         }
-        if (((PRESSED_ROW & 1) == 0) && mThumbs.get(PRESSED_ID).normalizedValueX <= .01) { // if it's an even row, must be on left side to move up
+        if (((Math.round(PRESSED_ROW) & 1) == 0) && mThumbs.get(PRESSED_ID).normalizedValueX <= .01) { // if it's an even row, must be on left side to move up
             return true;
         }
         return false;
@@ -327,10 +327,10 @@ public class SlidingProgression<T extends Number> extends ImageView {
 
     private boolean canMoveVerticallyDown(float x, float y) {
         System.out.println("down, normalized x: " + mThumbs.get(PRESSED_ID).normalizedValueX);
-        if (((PRESSED_ROW & 1) == 1) && mThumbs.get(PRESSED_ID).normalizedValueX <= .01) { // if it's an odd row, must be on left side to move down
+        if (((Math.round(PRESSED_ROW) & 1) == 1) && mThumbs.get(PRESSED_ID).normalizedValueX <= .01) { // if it's an odd row, must be on left side to move down
             return true;
         }
-        if (((PRESSED_ROW & 1) == 0) && mThumbs.get(PRESSED_ID).normalizedValueX >= .99) { // if it's an even row, must be on right side to move down
+        if (((Math.round(PRESSED_ROW) & 1) == 0) && mThumbs.get(PRESSED_ID).normalizedValueX >= .99) { // if it's an even row, must be on right side to move down
             return true;
         }
         return false;

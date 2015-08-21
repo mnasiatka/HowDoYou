@@ -1,21 +1,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
+    android:padding="15dp"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/LOGIN_TEXTVIEW_PAGE"
+    <ImageSwitcher
+        android:id="@+id/imageswitcher"
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:text="Blank"
-        android:textColor="@color/black" />
+        android:layout_height="wrap_content"/>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/LOGIN_TEXTVIEW_PAGE" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageswitcher"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:hint="Password" />
 
 </RelativeLayout>
