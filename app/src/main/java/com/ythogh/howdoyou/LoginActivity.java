@@ -57,8 +57,6 @@ public class LoginActivity extends ActionBarActivity {
             }
         });
 
-
-
     }
 
     @Override
